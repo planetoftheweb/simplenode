@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "weather",
+  "build": {
+    "env": {
+      "VARIABLE_NAME": "@darksky_secret"
+    }
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/static/index.html"
+    },
+    {
+      "src": "/weather",
+      "dest": "/index.js"
+    }
+  ],
+  "builds": [
+    {
+      "src": "./static/*.html",
+      "use": "@now/static"
+    },
+    {
+      "src": "/index.js",
+      "use": "@now/node"
+    }
+  ]
+}
